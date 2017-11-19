@@ -1,4 +1,4 @@
-@extends('capPlazas-mgnt.base')
+@extends('copPlazas-mgmt.base')
 @section('action-content')
     <!-- Main content -->
     <section class="content">
@@ -9,7 +9,7 @@
           <h3 class="box-title">Lista de Plazas CAP</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('capPlazas-management.create') }}">Agregar Nueva Plaza CAP</a>
+          <a class="btn btn-primary" href="{{ route('copPlazas-management.create') }}">Agregar Nueva Plaza CAP</a>
         </div>
     </div>
   </div>
@@ -19,11 +19,11 @@
         <div class="col-sm-6"></div>
         <div class="col-sm-6"></div>
       </div>
-      <form method="POST" action="{{ route('capPlazas-management.search') }}">
+      <form method="POST" action="{{ route('copPlazas-management.search') }}">
          {{ csrf_field() }}
          @component('layouts.search', ['title' => 'Busqueda'])
           @component('layouts.two-cols-search-row', ['items' => ['Sede',  'Plaza'],
-          'oldVals' => [isset($searchingVals) ? $searchingVals['sede'] : '', isset($searchingVals) ? $searchingVals['plaza'] : '']])
+          'oldVals' => [isset($searchingVals) ? $searchingVals['sede'] : '', isset($searchingVals) ? $searchingVals['rotulo'] : '']])
           @endcomponent
         @endcomponent
       </form>
@@ -50,10 +50,10 @@
                   <td class="hidden-xs">{{ $capPlaza->rotulo }}</td>
                   <td class="hidden-xs">{{ $capPlaza->modalidad }}</td>
                   <td>
-                    <form class="row" method="POST" action="{{ route('employee-management.destroy', ['id' => $capPlaza->id]) }}" onsubmit = "return confirm('Seguro?')">
+                    <form class="row" method="POST" action="{{ route('copPlazas-management.destroy', ['id' => $capPlaza->id]) }}" onsubmit = "return confirm('Seguro?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('employee-management.edit', ['id' => $capPlaza->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
+                        <a href="{{ route('copPlazas-management.edit', ['id' => $capPlaza->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
                         Modificar
                         </a>
                          <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
