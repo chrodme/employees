@@ -48,3 +48,6 @@ Route::post('system-management/report/excel', 'ReportController@exportExcel')->n
 Route::post('system-management/report/pdf', 'ReportController@exportPDF')->name('report.pdf');
 
 Route::get('avatars/{name}', 'EmployeeManagementController@load');
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+Route::resource('capPlazas-management', 'CapPlazasController');
+Route::post('capPlazas-management/search', 'CapPlazasController@search')->name('capPlazas-management.search');

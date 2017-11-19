@@ -49,7 +49,7 @@
           </ul>
         </li>
         <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
-        <li><a href="{{ route('user-management.index') }}"><i class="fa fa-link"></i> <span>Plazas CAP</span></a></li>
+        <li><a href="{{ route('capPlazas-management.index') }}"><i class="fa fa-link"></i> <span>Plazas CAP</span></a></li>
       </ul>
       <!-- /.sidebar-menu -->
     </section>
